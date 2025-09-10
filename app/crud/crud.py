@@ -10,8 +10,8 @@ from sqlalchemy.orm import Session
 
 #en terminos cortos es como un "puente" entre los modelos python (ORM) y la base de datos real.
 
-from app.models import models
-from app.schemas import schemas
+from models import models
+from schemas import schemas
 
 # 1. obtiene todos los registros
 

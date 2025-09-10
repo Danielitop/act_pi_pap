@@ -18,7 +18,7 @@ from sqlalchemy import Column, Integer, String, Float
 #altura = column(Float)
 
 
-from app.database.database import Base
+from database.database import Base
 #importamos el modulo de data base
 
 class User(Base):
@@ -34,7 +34,7 @@ class product(Base):
     price = Column(Float)
 
 class Order(Base):
-    __tablaname__ = "orders"
+    __tablename__ = "orders"
     id = Column(Integer, primary_key= True)
     User_id = Column(Integer)
     product_id = Column(Integer)

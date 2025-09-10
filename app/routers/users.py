@@ -4,10 +4,10 @@ from fastapi import APIRouter, Depends
 #es una herramienta de FastApi que organiza las rutas en mudulos separados.
 #en lugar de meter todo los endpoints en main.py, creae "routes" n archivos distintos (por ejemplo, users.py, products.py) y luego los unes al proyecto.
 from sqlalchemy.orm import Session
-from app.crud import crud
-from app.schemas import schemas
-from app.models import models
-from app.database.database import get_db
+from crud import crud
+from schemas import schemas
+from models import models
+from database.database import get_db
 
 #DEFINICION DEL ROUTER
 router = APIRouter(prefix="/users")

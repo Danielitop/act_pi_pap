@@ -1,12 +1,13 @@
 #Propósito: Inicializar y configurar la aplicación FastAPI.
 
 from fastapi import FastAPI
-from app.database.database import engine
-from app.models import models
-from app.routers import users, products, orders
+from database.database import engine
+from models import models
+from routers import users, products, orders
 
 #crear tabla en la base de datos
-models.Base.metadata.create_all(bind=engine)
+if __name__ == "__main__":
+    models.Base.metadata.create_all(bind=engine)
 
 #crear aplicacion FastAPI
 app = FastAPI()
