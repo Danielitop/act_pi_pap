@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic<2.0  # Versión 1.x que no requiere Rust
+python-multipart
