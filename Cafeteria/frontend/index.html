@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Delicioso</title>
+    <!-- Cambiar la ruta del CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ Cafetería Delicioso</h1>
+            <p>Los mejores cafés y delicias</p>
+        </header>
+
+        <div class="filters">
+            <button onclick="cargarProductos()">Todos</button>
+            <button onclick="cargarProductosPorCategoria('cafe')">Cafés</button>
+            <button onclick="cargarProductosPorCategoria('pasteleria')">Pastelería</button>
+            <button onclick="cargarProductosPorCategoria('bebida')">Bebidas</button>
+            <button onclick="cargarProductosPorCategoria('sandwich')">Sandwiches</button>
+        </div>
+
+        <div id="productos" class="productos-grid"></div>
+
+        <div class="pedido-section">
+            <h2>Realizar Pedido</h2>
+            <form id="pedidoForm">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu email" required>
+                <div id="carrito">
+                    <h3>Carrito de compras</h3>
+                    <ul id="itemsCarrito"></ul>
+                    <p>Total: $<span id="total">0.00</span></p>
+                </div>
+                <button type="submit">Realizar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cambiar la ruta del JS -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
