@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Moderna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* Definimos un fondo con degradado de café. */
+            /* Oscuro en la parte superior, más claro abajo. */
+            background-image: linear-gradient(to bottom, #4A2C2A, #8B5E3C);
+            height: 100vh;
+        }
+    </style>
+</head>
+<body class="font-sans text-white">
+
+    <div class="container mx-auto p-4 md:p-8 min-h-screen flex items-center justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+            <div class="glass-container p-6 rounded-3xl backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
+                <h2 class="text-3xl font-semibold mb-6 text-center text-white/90">Productos</h2>
+                <form id="product-form" class="space-y-4 mb-6">
+                    <input type="text" id="product-name" placeholder="Nombre del producto" required class="w-full p-3 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300">
+                    <input type="number" id="product-price" placeholder="Precio" step="0.01" required class="w-full p-3 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300">
+                    <select id="product-type" required class="w-full p-3 rounded-xl border border-white/30 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300">
+                        <option value="bebida" class="bg-stone-800">Bebida</option>
+                        <option value="postre" class="bg-stone-800">Postre</option>
+                        <option value="snack" class="bg-stone-800">Snack</option>
+                    </select>
+                    <button type="submit" class="w-full py-3 rounded-xl font-bold text-lg text-stone-800 bg-amber-400 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
+                        Crear Producto
+                    </button>
+                </form>
+                <ul id="product-list" class="space-y-4"></ul>
+            </div>
+
+            <div class="glass-container p-6 rounded-3xl backdrop-blur-md bg-white/10 border border-white/20 shadow-lg col-span-2">
+                <h2 class="text-3xl font-semibold mb-6 text-center text-white/90">Carrito</h2>
+                <ul id="cart-list" class="space-y-4 mb-6"></ul>
+                <div class="flex flex-col md:flex-row justify-end gap-4">
+                    <button id="checkout-btn" class="w-full md:w-auto py-3 px-6 rounded-xl font-bold text-lg text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
+                        Finalizar compra
+                    </button>
+                    <button id="clear-cart-btn" class="w-full md:w-auto py-3 px-6 rounded-xl font-bold text-lg text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
+                        Limpiar carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden">
+        <div class="relative p-8 border rounded-3xl shadow-2xl backdrop-blur-xl bg-white/20 border-white/30 text-white w-full max-w-sm">
+            <div class="text-center">
+                <h3 class="text-2xl leading-6 font-medium text-white/90 mb-4">Editar Producto</h3>
+                <div class="px-2 py-3">
+                    <input type="hidden" id="edit-product-id">
+                    <input type="text" id="edit-product-name" placeholder="Nombre" required class="w-full p-3 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300 mb-4">
+                    <input type="number" id="edit-product-price" placeholder="Precio" step="0.01" required class="w-full p-3 rounded-xl border border-white/30 bg-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-amber-200 transition-all duration-300">
+                </div>
+                <div class="mt-4 space-y-3">
+                    <button id="save-edit" class="w-full py-3 rounded-xl font-bold text-lg text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">Guardar</button>
+                    <button id="cancel-edit" class="w-full py-3 rounded-xl font-bold text-lg text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
