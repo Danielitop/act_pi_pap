@@ -40,5 +40,8 @@ Este proyecto es una aplicación web simple de cafetería con carrito de compras
 - No hay autenticación.
 - El frontend es estático y simple.
 
+<img src="frontend/img/priemra.png" alt="iniciar el servidor web" width="500"/>
+<img src="frontend/img/segunda.png" alt="iniciar la inteliguencia artificial" width="500"/>
+
 ---
 ¡Listo para usar y modificar como cafetería!
